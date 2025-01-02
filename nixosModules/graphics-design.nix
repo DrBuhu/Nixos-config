@@ -20,10 +20,8 @@ let affinity-nix = inputs.affinity-nix; in
     ;
 
   };
-
-        
   fonts.packages = [
-    #pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerdfonts
   ];
   home-manager.users.${config.my.username}={
     

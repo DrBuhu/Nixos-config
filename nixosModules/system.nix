@@ -29,7 +29,7 @@
           home.stateVersion = "24.11";
     };
     backupFileExtension = "backup";
-    sharedModules = [ inputs.nix-doom-emacs-unstraightened.hmModule ];
+    #sharedModules = [ inputs.nix-doom-emacs-unstraightened.hmModule ];
 
   };
 

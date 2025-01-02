@@ -18,9 +18,9 @@
     programs.neovim.enable =true;
     programs.git.enable = true;
     programs.lazygit.enable = true;
-    programs.doom-emacs = {
-      enable = true;
-    };
+    #programs.doom-emacs = {
+    #  enable = true;
+    #};
   };
   virtualisation.docker.enable = true;
 
