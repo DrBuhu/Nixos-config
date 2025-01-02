@@ -7,6 +7,8 @@
   [ # programs that need extra config
     ../softwareconf/fish.nix
     ../softwareconf/git.nix
+    ../softwareconf/zellij.nix
+
     ];
 
   environment.systemPackages = lib.attrValues {

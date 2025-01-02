@@ -17,13 +17,16 @@
       pkgs.nix-output-monitor
       pkgs.nvd
       pkgs.rpm
+      pkgs.dnf5
       pkgs.rPackages.yum
-
+      pkgs.dnf-plugins-core
+      pkgs.alsa-utils
 
   ];
   environment.sessionVariables = {
     FLAKE = "/etc/nixos";
   };
+
 
   home-manager ={
     useGlobalPkgs = true;
@@ -41,6 +44,15 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    jack.enable = true;
+  };
 
   
   #Optimization
