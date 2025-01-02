@@ -3,6 +3,7 @@
   imports =
     [ 
 
+      ../softwareconf/doom-emacs.nix  
       ../softwareconf/nvim.nix  
     ];
 
@@ -18,7 +19,6 @@
     programs.lazygit.enable = true;
     programs.doom-emacs = {
       enable = true;
-      doomDir = inputs.doom-config;  # or e.g. `./doom.d` for a local configuration
     };
   };
   virtualisation.docker.enable = true;

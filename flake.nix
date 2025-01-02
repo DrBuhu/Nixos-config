@@ -24,6 +24,9 @@
 
   inputs.affinity-nix.url = "github:mrshmllow/affinity-nix";
 
+    
+
+
 outputs = inputs @ {
    nixpkgs,
    home-manager, 
@@ -38,11 +41,13 @@ outputs = inputs @ {
     homeConfigurations = {
       "unwary" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
-	  extraSpecialArgs = {inherit inputs;};
-
+	  extraSpecialArgs = {inherit (inputs) doom-emacs;};
 	  modules = [
+          inputs.nix-doom-emacs-unstraightened.hmModule
+
             {
               
+
               home.packages = 
               [
                 inputs.affinity-nix.packages.x86_64-linux.photo
@@ -62,6 +67,5 @@ outputs = inputs @ {
 	   ./host/fw-laptop/configuration.nix
 	];
 	};
-
   };
 }
