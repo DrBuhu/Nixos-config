@@ -16,6 +16,9 @@
       pkgs.nh
       pkgs.nix-output-monitor
       pkgs.nvd
+      pkgs.rpm
+      pkgs.rPackages.yum
+
 
   ];
   environment.sessionVariables = {

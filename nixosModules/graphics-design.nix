@@ -10,6 +10,10 @@ let affinity-nix = inputs.affinity-nix; in
       blender #neovim copy
       davinci-resolve-studio
       jetbrains-mono
+      ffmpeg
+
+      vdhcoapp
+
 
     ;
     inherit

@@ -7,43 +7,43 @@
   [ # programs that need extra config
     ../softwareconf/fish.nix
     ../softwareconf/git.nix
-  ];
+    ];
 
-    environment.systemPackages = lib.attrValues {
-      inherit
-      (pkgs)
-        xclip #neovim copy
-        wget	
-        alejandra #Nix-Formatting
-        nixd #Nix LSP
+  environment.systemPackages = lib.attrValues {
+    inherit
+    (pkgs)
+      xclip #neovim copy
+      wget	
+      alejandra #Nix-Formatting
+      nixd #Nix LSP
 
-        github-desktop
-        
-        lutris
-        wine
-        winetricks
-        cabextract
+      github-desktop
+      
+      lutris
+      wine
+      winetricks
+      cabextract
 
-        bitwarden
-        webtorrent_desktop
-        qalculate-qt
+      bitwarden
+      webtorrent_desktop
+      qalculate-qt
 
-        nodejs
-        nix-du
+      nodejs
+      nix-du
 
 
 
-       ;
-       inherit
-       (pkgs.nodePackages)
-        npm
+     ;
+     inherit
+     (pkgs.nodePackages)
+      npm
 
-      ;
-      inherit
-       (pkgs.xorg)
-        xhost
-      ;
-    };
+    ;
+    inherit
+     (pkgs.xorg)
+      xhost
+    ;
+  };
  
 
 

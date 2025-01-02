@@ -13,6 +13,7 @@
     pkgs.lazydocker
     pkgs.nodejs
     pkgs.python3
+    pkgs.pipx
     #DOOM - Emacs
     pkgs.shellcheck
     
