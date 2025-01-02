@@ -20,11 +20,15 @@
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
     # Optional, to download less. Neither the module nor the overlay uses this input.
     nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "";
+    doom-config = {
+      url = "github:hlissner/.doom.d";
+      flake = false;
+    };
+
   };
 
   inputs.affinity-nix.url = "github:mrshmllow/affinity-nix";
-
-    
+      
 
 
 outputs = inputs @ {
@@ -33,6 +37,7 @@ outputs = inputs @ {
    affinity-nix,
    ghostty,
    nix-doom-emacs-unstraightened,
+   doom-config,
    ...
   }: {
   
@@ -44,6 +49,7 @@ outputs = inputs @ {
 	  extraSpecialArgs = {inherit (inputs) doom-emacs;};
 	  modules = [
           inputs.nix-doom-emacs-unstraightened.hmModule
+          inputs.doom-config
 
             {
               
@@ -59,6 +65,7 @@ outputs = inputs @ {
   	  ];
       };
     };
+
 	    
 
 	nixosConfigurations.unwary = nixpkgs.lib.nixosSystem {

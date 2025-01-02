@@ -20,6 +20,22 @@
         "type": "github"
       }
     },
+    "doom-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1712180366,
+        "narHash": "sha256-XQiiLy+Q2WJl4vz1V5xXRkEFaVXLy+mg4G9iKFj+wlg=",
+        "owner": "hlissner",
+        "repo": ".doom.d",
+        "rev": "e67485097b4fe1a77e83d33e371e562fd9ad3b61",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hlissner",
+        "repo": ".doom.d",
+        "type": "github"
+      }
+    },
     "doomemacs": {
       "flake": false,
       "locked": {
@@ -242,6 +258,7 @@
     "root": {
       "inputs": {
         "affinity-nix": "affinity-nix",
+        "doom-config": "doom-config",
         "ghostty": "ghostty",
         "home-manager": "home-manager",
         "nix-doom-emacs-unstraightened": "nix-doom-emacs-unstraightened",

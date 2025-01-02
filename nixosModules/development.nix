@@ -12,6 +12,7 @@
     pkgs.vscodium-fhs
     pkgs.lazydocker
     pkgs.nodejs
+    pkgs.python3
   ]; 
     home-manager.users.${config.my.username}={
     programs.neovim.enable =true;

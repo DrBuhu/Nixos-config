@@ -48,20 +48,21 @@ in
  
 
 
-  home-manager.users.${config.my.username}={
-    programs.tmux.enable = true;
-    programs.fish.enable = true;
-    programs.kitty.enable = true;
-    programs.zoxide.enable = true;
-    programs.fzf.enable = true;
-    programs.git.enable = true;
-    programs.lazygit.enable = true;
-    programs.zellij.enable = true;
-    programs.yazi.enable = true;
-    programs.btop.enable = true;
-
+  home-manager.users.${config.my.username}= {
+    programs = {
+      tmux.enable = true;
+      fish.enable = true;
+      kitty.enable = true;
+      zoxide.enable = true;
+      fzf.enable = true;
+      git.enable = true;
+      lazygit.enable = true;
+      zellij.enable = true;
+      yazi.enable = true;
+      btop.enable = true;
+      fd.enable = true;
+    };
     services.kdeconnect.enable = true;
-      
     };
 
     
