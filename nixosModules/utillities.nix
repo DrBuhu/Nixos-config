@@ -1,9 +1,6 @@
 
 {inputs, pkgs, config,lib,... }:
-let
-  hm-programs = "{home-manager.users.${config.my.username}.programs}";
   
-in
 
 {
   imports =
@@ -32,6 +29,8 @@ in
         qalculate-qt
 
         nodejs
+        nix-du
+
 
 
        ;
@@ -61,6 +60,7 @@ in
       yazi.enable = true;
       btop.enable = true;
       fd.enable = true;
+      pandoc.enable = true;
     };
     services.kdeconnect.enable = true;
     };

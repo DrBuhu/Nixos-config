@@ -24,7 +24,6 @@
     inherit
     (pkgs.kdePackages)
       konversation
-      filelight
     ;
   };
 

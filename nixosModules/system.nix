@@ -39,6 +39,15 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
 
+  
+  #Optimization
+  nix.optimise.automatic = true;
+  nix.optimise.dates = [ "15:45" ];
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
   };
 }
 
