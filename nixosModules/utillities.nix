@@ -16,8 +16,7 @@
     (pkgs)
       xclip #neovim copy
       wget	
-      alejandra #Nix-Formatting
-      nixd #Nix LSP
+
 
       github-desktop
       
@@ -25,14 +24,18 @@
       wine
       winetricks
       cabextract
+      distrobox
 
       bitwarden
       webtorrent_desktop
       qalculate-qt
 
-      nodejs
       nix-du
+      fastfetch
 
+      #Screenshot
+      flameshot
+      shutter
 
 
      ;

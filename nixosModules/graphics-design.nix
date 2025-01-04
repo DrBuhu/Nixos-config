@@ -7,12 +7,15 @@ let affinity-nix = inputs.affinity-nix; in
   environment.systemPackages = lib.attrValues {
     inherit
     (pkgs)
-      blender #neovim copy
+      blender
       davinci-resolve-studio
       jetbrains-mono
       ffmpeg
+       
+      vdhcoapp #Download Helper - Firefox Extension
 
-      vdhcoapp
+      gimp
+
 
 
     ;

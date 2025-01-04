@@ -1,4 +1,4 @@
-{inputs, pkgs,  config, ... }:
+{lib, inputs, pkgs,  config, ... }:
 {
   imports =
     [ 
@@ -6,23 +6,33 @@
       ../softwareconf/doom-emacs.nix  
       ../softwareconf/nvim.nix  
     ];
+  environment.systemPackages = lib.attrValues {
+    inherit
+    (pkgs)
+      jetbrains-toolbox
+      vscodium-fhs
+      lazydocker
 
-  environment.systemPackages = [
-    pkgs.jetbrains-toolbox
-    pkgs.vscodium-fhs
-    pkgs.lazydocker
-    pkgs.nodejs
-    pkgs.python3
-    pkgs.pipx
-    #DOOM - Emacs
-    pkgs.shellcheck
-    
-  ]; 
-    home-manager.users.${config.my.username}={
+      # Languages
+      nodejs
+      python3
+      pipx
+
+      uv
+      
+      #DOOM - Emacs
+      shellcheck
+      nixd
+      alejandra #Nix-Formatting
+      nixfmt
+    ;
+
+  }; 
+  home-manager.users.${config.my.username}={
     programs.neovim.enable =true;
     programs.git.enable = true;
     programs.lazygit.enable = true;
-    programs.ripgrep.enable = true;
+    programs.ripgrep.enable = true; # For doom-emacs
     #programs.doom-emacs = {
     #  enable = true;
     #};

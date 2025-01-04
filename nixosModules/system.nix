@@ -21,6 +21,7 @@
       pkgs.rPackages.yum
       pkgs.dnf-plugins-core
       pkgs.alsa-utils
+      pkgs.pacman
 
   ];
   environment.sessionVariables = {
