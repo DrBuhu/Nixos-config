@@ -1,4 +1,4 @@
-{pkgs,lib, ... }:
+{config, pkgs,lib, ... }:
 
 {
 
@@ -16,11 +16,15 @@
       anki
       maxima
       wxmaxima
+      glib-networking # Network acces for maxima
     ;
   };
+  # Smotth scrolling for Maxima
+   home-manager.users.${config.my.username}={
+     xdg.desktopEntries.wxmaxima ={
+       name = "wxMaxima";
+       exec = "GDK_BACKEND=x11 wxmaxima %f";
+     };
 
-
-
-
+   };
 }
-

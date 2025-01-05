@@ -5,8 +5,8 @@
     programs.fish = {
 
       interactiveShellInit = ''
-        set -gx EDITOR nvim 
-        set fish_greeting
+        set -gx EDITOR emacs -nw 
+        set fish_greeting 
         zoxide init fish | source
         fish_add_path ~/.config/emacs/bin
       '';

@@ -11,7 +11,11 @@
     (pkgs)
       jetbrains-toolbox
       vscodium-fhs
+      # Docker
       lazydocker
+
+      # Database
+      mariadb
 
       # Languages
       nodejs
@@ -23,16 +27,30 @@
       #DOOM - Emacs
       shellcheck
       nixd
+      nil
       alejandra #Nix-Formatting
       nixfmt
+
+      #Java
+      jdk11
+      jdk
+      google-java-format
+      jdt-language-server # cool suggestions
     ;
 
-  }; 
+  };
+  nix.nixPath = ["nixpkgs = $(inputs.nixpkgs)"];
   home-manager.users.${config.my.username}={
-    programs.neovim.enable =true;
-    programs.git.enable = true;
-    programs.lazygit.enable = true;
-    programs.ripgrep.enable = true; # For doom-emacs
+
+    programs={
+      neovim.enable =true;
+      git.enable = true;
+      lazygit.enable = true;
+      ripgrep.enable = true; # For doom-emacs
+      java.enable = true;
+
+    };
+
     #programs.doom-emacs = {
     #  enable = true;
     #};
