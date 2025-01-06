@@ -5,7 +5,7 @@
     programs.fish = {
 
       interactiveShellInit = ''
-        set -gx EDITOR emacs -nw 
+        set -gx EDITOR doom run
         set fish_greeting 
         zoxide init fish | source
         fish_add_path ~/.config/emacs/bin
