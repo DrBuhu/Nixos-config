@@ -13,6 +13,7 @@
   config ={
     environment.systemPackages = [
       pkgs.home-manager
+      pkgs.fw-ectool
       pkgs.nh
       pkgs.nix-output-monitor
       pkgs.nvd

@@ -10,70 +10,62 @@
     ../softwareconf/zellij.nix
 
     ];
-
-  environment.systemPackages = lib.attrValues {
-    inherit
-    (pkgs)
-      xclip #neovim copy
-      wget	
+  config={
+    environment.systemPackages = [
 
 
-      github-desktop
-      
-      lutris
-      wine
-      winetricks
-      cabextract
-      distrobox
-
-      bitwarden
-      webtorrent_desktop
-      qalculate-qt
-
-      nix-du
-      fastfetch
-
-      #Screenshot
-      flameshot
-      shutter
+      pkgs.xclip #neovim copy
+      pkgs.wget
 
 
-     ;
-     inherit
-     (pkgs.nodePackages)
-      npm
+      pkgs.github-desktop
+      pkgs.
+      pkgs.lutris
+      pkgs.wine
+      pkgs.winetricks
+      pkgs.cabextract
+      pkgs.distrobox
 
-    ;
-    inherit
-     (pkgs.xorg)
-      xhost
-    ;
+      pkgs.bitwarden
+      pkgs.webtorrent_desktop
+      pkgs.qalculate-qt
+
+      pkgs.nix-du # for system optimisation
+      pkgs.manix # for looking up pkgs/options
+
+      pkgs.fastfetch
+
+      pkgs.#Screenshot
+      pkgs.flameshot
+      pkgs.shutter
+
+
+
+      pkgs.nodePackages.npm
+      pkgs.xhost
+    ];
+
+    home-manager.users.${config.my.username}= {
+      programs = {
+        tmux.enable = true;
+        fish.enable = true;
+        kitty.enable = true;
+        zoxide.enable = true;
+        fzf.enable = true;
+        git.enable = true;
+        lazygit.enable = true;
+        zellij.enable = true;
+        yazi.enable = true;
+        btop.enable = true;
+        fd.enable = true;
+        pandoc.enable = true;
+      };
+      services.kdeconnect.enable = true;
+      };
+
+
+      programs.fish.enable = true;
+      environment.shells =  [pkgs.fish pkgs.bash pkgs.zsh];
+      users.users.unwary.shell = pkgs.fish;
   };
- 
-
-
-  home-manager.users.${config.my.username}= {
-    programs = {
-      tmux.enable = true;
-      fish.enable = true;
-      kitty.enable = true;
-      zoxide.enable = true;
-      fzf.enable = true;
-      git.enable = true;
-      lazygit.enable = true;
-      zellij.enable = true;
-      yazi.enable = true;
-      btop.enable = true;
-      fd.enable = true;
-      pandoc.enable = true;
-    };
-    services.kdeconnect.enable = true;
-    };
-
-    
-    programs.fish.enable = true;
-    environment.shells =  [pkgs.fish pkgs.bash pkgs.zsh];
-    users.users.unwary.shell = pkgs.fish;
 }
-
-
