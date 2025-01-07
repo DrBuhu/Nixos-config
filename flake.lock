@@ -97,11 +97,11 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1736208193,
-        "narHash": "sha256-1W41zbMtjp4BnHmBMV4eYXQXXns/ADKv5evufxnC04M=",
+        "lastModified": 1736210320,
+        "narHash": "sha256-QnDkQ/s1OWmPj1f+7MFNxQiAPJdHbI1Aft7yM5I+8gQ=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "0974705dd9e4728d85bc0064987da591c4ea9f51",
+        "rev": "a3837a1e4ee06a183f32d4a622c2cdcd51f73fb8",
         "type": "github"
       },
       "original": {
@@ -150,6 +150,22 @@
         "owner": "nix-community",
         "ref": "release-24.11",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1735388221,
+        "narHash": "sha256-e5IOgjQf0SZcFCEV/gMGrsI0gCJyqOKShBQU0iiM3Kg=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "7c674c6734f61157e321db595dbfcd8523e04e19",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
         "type": "github"
       }
     },
@@ -258,6 +274,7 @@
         "affinity-nix": "affinity-nix",
         "ghostty": "ghostty",
         "home-manager": "home-manager",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3"
       }
     },

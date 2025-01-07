@@ -39,10 +39,11 @@
       pkgs.flameshot
       pkgs.shutter
 
+      pkgs.thermald # for fan checking
 
 
       pkgs.nodePackages.npm
-      pkgs.xhost
+      pkgs.xhosts #Todo what is that?
     ];
 
     home-manager.users.${config.my.username}= {

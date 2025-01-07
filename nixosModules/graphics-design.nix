@@ -1,4 +1,11 @@
-{lib, inputs,pkgs, config, nixpkgs,  ... }:
+{
+  lib,
+  inputs,
+  pkgs,
+  config,
+  nixpkgs,
+#  nixpkgs-old-davinci,
+  ... }:
 
 let affinity-nix = inputs.affinity-nix; in
 {
@@ -8,7 +15,6 @@ let affinity-nix = inputs.affinity-nix; in
     inherit
     (pkgs)
       blender
-      davinci-resolve-studio
       jetbrains-mono
       ffmpeg
        
@@ -25,7 +31,10 @@ let affinity-nix = inputs.affinity-nix; in
     designer
     publisher
     ;
-
+#    inherit
+#      (nixpkgs-old-davinci)
+#        davinci-resolve-studio
+#      ;
   };
   fonts.packages = [
     pkgs.nerdfonts
