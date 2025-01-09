@@ -6,8 +6,9 @@
     ];
 
   environment.systemPackages = [
-    pkgs.audacity
+    pkgs.audacity # Recoder/sound editor
     pkgs.vlc
+    pkgs.tauon ## Music Player
   ];
 
 

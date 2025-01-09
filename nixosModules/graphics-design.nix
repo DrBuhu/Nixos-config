@@ -22,6 +22,8 @@ let affinity-nix = inputs.affinity-nix; in
 
       gimp
 
+      davinci-resolve-studio
+      shotcut
 
 
     ;

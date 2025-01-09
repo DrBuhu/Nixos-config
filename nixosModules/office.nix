@@ -11,4 +11,4 @@
 
   home-manager.users.${config.my.username}={
   };
-};
+}

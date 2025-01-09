@@ -1,4 +1,4 @@
-{pkgs, config, ... }:
+{pkgs,lib, config, ... }:
 
   let
   cfg = config.module;
@@ -8,7 +8,7 @@
     enable = mkBoolOpt false "Enable module";
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = lib.attrValues {
         inherit
         (pkgs)

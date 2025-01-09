@@ -11,6 +11,8 @@
     (pkgs)
       steam-run
       prismlauncher #minecraft-launcher
+      asciiquarium
+      #bsdgames
     ;
   };
 }

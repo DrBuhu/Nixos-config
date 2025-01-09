@@ -39,16 +39,25 @@ in
       pkgs.nil
       pkgs.alejandra #Nix-Formatting
       pkgs.nixfmt
+
   ] ++ optionals cfg.enable [
 
       pkgs.jetbrains-toolbox
       pkgs.vscodium-fhs
       pkgs.mariadb
+
+      ##Languages
       pkgs.nodejs
       pkgs.jdk11
       pkgs.jdk
       pkgs.google-java-format
       pkgs.jdt-language-server # cool suggestions
+      pkgs.vscode-langservers-extracted
+      pkgs.deno
+      pkgs.typescript-language-server
+      pkgs.typescript
+
+
 
   ];
 
