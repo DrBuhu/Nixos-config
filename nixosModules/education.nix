@@ -10,15 +10,13 @@
 
 
 
-  environment.systemPackages = lib.attrValues {
-    inherit
-    (pkgs)
-      anki
-      maxima
-      wxmaxima
-      glib-networking # Network acces for maxima
-    ;
-  };
+  environment.systemPackages =[
+      pkgs.anki
+      pkgs.maxima
+      pkgs.wxmaxima
+      pkgs.glib-networking # Network acces for maxima
+      pkgs.ciscoPacketTracer8
+  ];
   # Smotth scrolling for Maxima
    home-manager.users.${config.my.username}={
      xdg.desktopEntries.wxmaxima ={

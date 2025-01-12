@@ -18,7 +18,6 @@ in
  imports =
   [
     ../softwareconf/doom-emacs.nix
-    ../softwareconf/nvim.nix
   ];
   config={
     environment.systemPackages = [
@@ -33,6 +32,9 @@ in
       pkgs.python3
       pkgs.pipx
       pkgs.uv
+      pkgs.gcc
+      pkgs.clang
+      pkgs.zig
       #DOOM - Emacs
       pkgs.shellcheck
       pkgs.nixd
@@ -65,11 +67,16 @@ in
   nix.nixPath = ["nixpkgs = $(inputs.nixpkgs)"];
     home-manager.users.${config.my.username}={
       programs={
-        neovim.enable =true;
         java.enable = true;
         git.enable = true;
         lazygit.enable = true;
         ripgrep.enable = true; # For doom-emacs
+        neovim ={
+          enable = true;
+          vimAlias = true;
+          vimdiffAlias = true;
+          withNodeJs = true;
+        };
 
 
     };

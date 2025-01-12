@@ -2,30 +2,28 @@
 {pkgs, config, lib, ... }:
 {
 
-  environment.systemPackages = lib.attrValues {
-    inherit
-    (pkgs)
+  environment.systemPackages = [
 
-      discord-canary
-      nicotine-plus
-      webtorrent_desktop
-      tor-browser
-      soulseekqt
+      pkgs.discord-canary
+      pkgs.nicotine-plus
+      pkgs.webtorrent_desktop
+      pkgs.tor-browser
+      pkgs.soulseekqt
 
-      spotube
-      
-      signal-desktop
-      signal-cli
-    ;
-    inherit
-    (pkgs.nodePackages)
+      pkgs.spotube
+      pkgs.signal-desktop
+      pkgs.signal-cli
+
       #webtorrent-cli
-    ;
-    inherit
-    (pkgs.kdePackages)
-      konversation
-    ;
-  };
+      pkgs.konversation
+
+      #Nimble/Twitter anon
+      pkgs.nim
+      pkgs.nimble
+      pkgs.libsass
+      pkgs.redis
+      pkgs.nitter
+  ];
 
 
 
@@ -34,7 +32,7 @@
     programs.librewolf.enable = true;
 
   };
-
+  services.nitter.enable = true;
 # Tiny Tiny RSS
   services.tt-rss = {
     enable = true;

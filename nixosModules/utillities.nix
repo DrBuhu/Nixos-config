@@ -11,8 +11,10 @@
     ../softwareconf/virtualisation.nix
     ];
   config={
+    programs.virt-manager.enable = true;
     environment.systemPackages = [
 
+      pkgs.ghostty
 
       pkgs.xclip #neovim copy
       pkgs.wget
@@ -67,9 +69,6 @@
         btop.enable = true;
         fd.enable = true;
         pandoc.enable = true;
-
-
-      virt-manager.enable = true;
 
     };
     services.kdeconnect.enable = true;
