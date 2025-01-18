@@ -40,7 +40,7 @@ in
       pkgs.nixd
       pkgs.nil
       pkgs.alejandra #Nix-Formatting
-      pkgs.nixfmt
+      pkgs.zed-editor
 
   ] ++ optionals cfg.enable [
 

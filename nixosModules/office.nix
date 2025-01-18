@@ -1,13 +1,11 @@
 {pkgs, lib, config, ... }:
 {
 
-  environment.systemPackages = lib.attrValues {
-    inherit
-    (pkgs)
-      obsidian
-    ;
+  environment.systemPackages =[
+    pkgs.obsidian
+    pkgs.libreoffice-qt
+  ];
 
-  };
 
   home-manager.users.${config.my.username}={
   };

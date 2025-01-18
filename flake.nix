@@ -6,8 +6,12 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     ghostty = { url = "github:ghostty-org/ghostty"; };
-    stylix.url = "github:danth/stylix/release-24.11";
-
+    #stylix.url = "github:danth/stylix/release-24.11";
+    #
+    focal = {
+        url = "github:iynaix/focal";
+        inputs.nixpkgs.follows = "nixpkgs"; # override this repo's nixpkgs snapshot
+    };
     home-manager = {
 
       url = "github:nix-community/home-manager/release-24.11";
@@ -45,7 +49,8 @@
     affinity-nix,
     ghostty,
     nixos-hardware,
-    stylix,
+    focal,
+    #stylix,
 #    nixpkgs-old-davinci,
    #nix-doom-emacs-unstraightened,
    #doom-config,
@@ -69,6 +74,7 @@
 
               home.packages = 
               [
+                inputs.focal.packages.x86_64-linux.default
                 inputs.affinity-nix.packages.x86_64-linux.photo
                 inputs.affinity-nix.packages.x86_64-linux.designer
                 inputs.affinity-nix.packages.x86_64-linux.publisher
@@ -76,7 +82,7 @@
 
             }
 
-          stylix.nixosModules.stylix ./nixosModules/system.nix
+          #stylix.nixosModules.stylix ./nixosModules/system.nix
   	  ];
       };
     };

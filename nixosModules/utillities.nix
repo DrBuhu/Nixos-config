@@ -1,7 +1,9 @@
 
 {inputs, pkgs, config,lib,... }:
   
-
+#let
+#  focal = inputs.focal.packages.x86_64-linux.default;
+#in
 {
   imports =
   [ # programs that need extra config
@@ -19,11 +21,19 @@
       pkgs.xclip #neovim copy
       pkgs.wget
       pkgs.jq
+      pkgs.killall
 
+
+      pkgs.tldr
+      pkgs.powerdevil
+      pkgs.xorg.xbacklight
+      pkgs.brightnessctl
+      pkgs.xsettingsd
+      pkgs.ddcutil
+      pkgs.ddcui
 
       pkgs.github-desktop
 #      pkgs.appimage-run
-      pkgs.lutris
       pkgs.wine
       pkgs.winetricks
       pkgs.cabextract
@@ -31,9 +41,15 @@
       pkgs.flatpak
       pkgs.flatpak-builder
 
+      pkgs.borgbackup
 
       pkgs.bitwarden
       pkgs.webtorrent_desktop
+      pkgs.qbittorrent
+      pkgs.rar
+      pkgs.dtrx
+      pkgs.ark
+
       pkgs.qalculate-qt
 
       pkgs.nix-du # for system optimisation
@@ -41,7 +57,7 @@
 
       pkgs.fastfetch
 
-      pkgs.#Screenshot
+      #Screenshot
       pkgs.flameshot
       pkgs.shutter
 
@@ -49,17 +65,28 @@
 
 
       pkgs.nodePackages.npm
+      pkgs.bun
       pkgs.xhosts #Todo what is that?
+      pkgs.parted
+      pkgs.gparted
+      pkgs.btrfs-assistant
 
       pkgs.zlib
-    ];
 
+      #pkgs.focal.packages.x86_64-linux
+
+    ];
+    programs.light.enable = true;
+    programs.partition-manager.enable = true;
     home-manager.users.${config.my.username}= {
       programs = {
         tmux.enable = true;
         fish.enable = true;
         kitty.enable = true;
         zoxide.enable = true;
+
+
+
         fzf.enable = true;
         git.enable = true;
         gh.enable = true;
@@ -69,7 +96,6 @@
         btop.enable = true;
         fd.enable = true;
         pandoc.enable = true;
-
     };
     services.kdeconnect.enable = true;
   };

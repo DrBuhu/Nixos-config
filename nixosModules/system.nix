@@ -21,8 +21,26 @@
 
   config ={
 
+      programs.hyprland.enable = true;
+      xdg.portal.enable = true;
+      xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       environment.systemPackages = [
+      	#pkgs.qtile-unwrapped
+        pkgs.waybar
+        pkgs.dunst
+        pkgs.libnotify
+        pkgs.swww
+        pkgs.rofi-wayland
+        pkgs.nwg-displays
+        pkgs.networkmanagerapplet
+        pkgs.overskride
+
+
+        pkgs.kdePackages.qttools
+        pkgs.dbus
+
         pkgs.home-manager
+        pkgs.kdePackages.powerdevil
         pkgs.fw-ectool
         pkgs.nh
         pkgs.nix-output-monitor
@@ -35,6 +53,8 @@
         pkgs.alsa-lib
         pkgs.alsa-plugins
         pkgs.pacman
+        pkgs.xbrightness
+        pkgs.powerdevil
         pkgs.kdePackages.appstream-qt
 
         #Audio encoders:
