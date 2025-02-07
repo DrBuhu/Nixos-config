@@ -42,9 +42,9 @@ networking.hostName = "unwary"; # Define your hostname.
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 # Enable the X11 windowing system.
-services.xserver.enable = true;
-services.displayManager.sddm.enable=true;
-services.desktopManager.plasma6.enable=true;
+#services.xserver.enable = true;
+#services.displayManager.sddm.enable=true;
+#services.desktopManager.plasma6.enable=true;
 
 hardware.enableAllFirmware = true;
   # Configure keymap in X11

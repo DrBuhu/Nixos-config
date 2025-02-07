@@ -27,6 +27,7 @@
       environment.systemPackages = [
       	#pkgs.qtile-unwrapped
         pkgs.waybar
+	pkgs.exfat
         pkgs.dunst
         pkgs.libnotify
         pkgs.swww
@@ -36,11 +37,11 @@
         pkgs.overskride
 
 
-        pkgs.kdePackages.qttools
+       # pkgs.kdePackages.qttools
         pkgs.dbus
 
         pkgs.home-manager
-        pkgs.kdePackages.powerdevil
+       # pkgs.kdePackages.powerdevil
         pkgs.fw-ectool
         pkgs.nh
         pkgs.nix-output-monitor
@@ -55,7 +56,7 @@
         pkgs.pacman
         pkgs.xbrightness
         pkgs.powerdevil
-        pkgs.kdePackages.appstream-qt
+        #pkgs.kdePackages.appstream-qt
 
         #Audio encoders:
         pkgs.faac

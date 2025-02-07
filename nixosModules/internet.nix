@@ -5,10 +5,16 @@
   environment.systemPackages = [
 
       pkgs.discord-canary
+      pkgs.qutebrowser
       pkgs.nicotine-plus
       pkgs.webtorrent_desktop
+      pkgs.clipgrab
       pkgs.tor-browser
+      pkgs.caddy
       pkgs.soulseekqt
+      pkgs.whatsapp-for-linux
+      pkgs.w3m
+      pkgs.rofi-rbw
 
       pkgs.riseup-vpn
       pkgs.protonvpn-cli
@@ -16,6 +22,7 @@
       pkgs.protonvpn-cli_2
       pkgs.i2p
       pkgs.i2pd
+      pkgs.browsh
 
       pkgs.spotube
       pkgs.signal-desktop
@@ -33,6 +40,10 @@
   ];
   #services.i2p.enable = true;
   services.i2pd.enable = true;
+  services.jellyfin.enable = true;
+  services.caddy = {
+    enable = true;
+  };
 
 
   home-manager.users.${config.my.username}={

@@ -5,6 +5,7 @@
 #  focal = inputs.focal.packages.x86_64-linux.default;
 #in
 {
+
   imports =
   [ # programs that need extra config
     ../softwareconf/fish.nix
@@ -13,12 +14,21 @@
     ../softwareconf/virtualisation.nix
     ];
   config={
+    virtualisation.waydroid.enable = true;
     programs.virt-manager.enable = true;
+    programs.thunar.enable = true;
     environment.systemPackages = [
 
       pkgs.ghostty
+      pkgs.bitwarden-cli
+      pkgs.jq
+      pkgs.waydroid
+      pkgs.soundconverter
+      pkgs.pv
+      pkgs.dialog
 
-      pkgs.xclip #neovim copy
+      #pkgs.xclip #neovim copy
+      pkgs.wl-clipboard
       pkgs.wget
       pkgs.jq
       pkgs.killall
