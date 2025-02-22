@@ -15,6 +15,8 @@
       pkgs.whatsapp-for-linux
       pkgs.w3m
       pkgs.rofi-rbw
+      pkgs.tcpdump
+      pkgs.wireshark
 
       pkgs.riseup-vpn
       pkgs.protonvpn-cli
@@ -23,6 +25,7 @@
       pkgs.i2p
       pkgs.i2pd
       pkgs.browsh
+      pkgs.chromium
 
       pkgs.spotube
       pkgs.signal-desktop

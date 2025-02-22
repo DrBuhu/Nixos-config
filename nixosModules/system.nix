@@ -27,14 +27,20 @@
       environment.systemPackages = [
       	#pkgs.qtile-unwrapped
         pkgs.waybar
+	pkgs.swaylock
+	pkgs.hyprlock
+	pkgs.bluetui
+	pkgs.blueman
 	pkgs.exfat
         pkgs.dunst
+	pkgs.cargo
         pkgs.libnotify
         pkgs.swww
         pkgs.rofi-wayland
         pkgs.nwg-displays
         pkgs.networkmanagerapplet
         pkgs.overskride
+	pkgs.ntfs3g
 
 
        # pkgs.kdePackages.qttools
@@ -48,6 +54,8 @@
         pkgs.nvd
         pkgs.rpm
         pkgs.dnf5
+	pkgs.python312Packages.pip
+	pkgs.pipenv
         pkgs.rPackages.yum
         pkgs.dnf-plugins-core
         pkgs.alsa-utils

@@ -15,6 +15,7 @@
       pkgs.maxima
       pkgs.wxmaxima
       pkgs.glib-networking # Network acces for maxima
+      pkgs.ventoy-full
       pkgs.ciscoPacketTracer8
   ];
   # Smotth scrolling for Maxima

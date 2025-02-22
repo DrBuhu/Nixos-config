@@ -22,11 +22,16 @@ in
   config={
     environment.systemPackages = [
 
+      pkgs.ostree
       #Docker
       pkgs.lazydocker
+      pkgs.arduino
+      pkgs.jetbrains.idea-ultimate
+      pkgs.jetbrains.datagrip
 
       # Languages
       pkgs.shellcheck
+      pkgs.filezilla
       pkgs.nixd
       pkgs.nil
       pkgs.python3
@@ -41,10 +46,9 @@ in
       pkgs.nil
       pkgs.alejandra #Nix-Formatting
       pkgs.zed-editor
-
+      pkgs.jetbrains-toolbox
   ] ++ optionals cfg.enable [
 
-      pkgs.jetbrains-toolbox
       pkgs.vscodium-fhs
       pkgs.mariadb
 

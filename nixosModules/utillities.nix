@@ -20,6 +20,8 @@
     environment.systemPackages = [
 
       pkgs.ghostty
+      pkgs.dolphin
+      pkgs.peazip
       pkgs.bitwarden-cli
       pkgs.jq
       pkgs.waydroid
