@@ -9,6 +9,7 @@
       pkgs.steam-run
       pkgs.prismlauncher #minecraft-launcher
       pkgs.asciiquarium
+      pkgs.lutris
       pkgs.playonlinux
       pkgs.libssh
 

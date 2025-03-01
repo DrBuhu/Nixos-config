@@ -67,7 +67,6 @@ in
   ];
 
 
-  nix.nixPath = ["nixpkgs = $(inputs.nixpkgs)"];
     home-manager.users.${config.my.username}={
       programs={
         java.enable = true;

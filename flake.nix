@@ -12,6 +12,15 @@
         url = "github:iynaix/focal";
         inputs.nixpkgs.follows = "nixpkgs"; # override this repo's nixpkgs snapshot
     };
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+#    rateme = {
+#     url = "github:ALi3naTEd0/RateMe";
+#     inputs.nixpkgs.follows = "nixpkgs";
+#    };
+
     home-manager = {
 
       url = "github:nix-community/home-manager/release-24.11";
@@ -50,6 +59,7 @@
     ghostty,
     nixos-hardware,
     focal,
+    winapps,
     #stylix,
 #    nixpkgs-old-davinci,
    #nix-doom-emacs-unstraightened,
@@ -89,10 +99,32 @@
 
 	    
 
-	nixosConfigurations.unwary = nixpkgs.lib.nixosSystem {
-	specialArgs = { inherit inputs; };
+  nixosConfigurations.unwary = nixpkgs.lib.nixosSystem rec {
+	specialArgs = { inherit inputs system;  };
+        system = "x86_64-linux";
 	modules = [
+
 	   ./host/fw-laptop/configuration.nix
+	   (
+            {
+              pkgs,
+              system ? pkgs.system,
+              ...
+            }:
+            {
+              # set up binary cache (optional)
+              nix.settings = {
+                substituters = [ "https://winapps.cachix.org/" ];
+                trusted-public-keys = [ "winapps.cachix.org-1:HI82jWrXZsQRar/PChgIx1unmuEsiQMQq+zt05CD36g=" ];
+              };
+
+              environment.systemPackages = [
+                winapps.packages."${system}".winapps
+                winapps.packages."${system}".winapps-launcher # optional
+              ];
+            }
+          )
+
 	];
 	};
   };

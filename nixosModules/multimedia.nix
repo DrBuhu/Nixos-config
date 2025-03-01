@@ -1,16 +1,33 @@
-{pkgs, config, ... }:
-{
-  imports =
-    [ # programs that need extra config
-     
-    ];
+{ pkgs, config, ... }:
 
-  environment.systemPackages = [
+let
+  newsony = pkgs.sony-headphones-client.overrideAttrs (oldAttrs: {
+    src = pkgs.fetchFromGitHub {
+      owner = "Plutoberth";
+      repo = "SonyHeadphonesClient";
+      rev = "e330d989016bfe4075e8df1bbcd1abc8c4f8b58d";
+      hash= "sha256-ZeujsyT5FgAhdjfgGMVuC5Q9agMKYeGPEycbEzfFZ2Y=";
+      fetchSubmodules = true;
+    };
+    patches = [];
+  });
+in
+
+{
+  imports = [];
+
+  environment.systemPackages =[
     pkgs.audacity # Recoder/sound editor
     pkgs.vlc
     pkgs.mpd
     pkgs.eartag
-    pkgs.tauon ## Music Player
+    pkgs.rsgain
+    pkgs.lidarr
+    pkgs.beets
+    pkgs.tageditor
+
+
+#    pkgs.tauon ## Music Player installed with flatpak
     pkgs.grimblast
     pkgs.puddletag
     pkgs.picard
@@ -20,11 +37,11 @@
     pkgs.kid3-cli
     pkgs.easytag
     pkgs.playerctl
+    newsony
+
   ];
 
-
-  home-manager.users.${config.my.username}={
-   
+  home-manager.users.${config.my.username} = {
+	programs.beets.enable = true;
   };
-
 }

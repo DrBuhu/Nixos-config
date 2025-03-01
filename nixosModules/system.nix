@@ -23,10 +23,17 @@
 
       programs.hyprland.enable = true;
       xdg.portal.enable = true;
+      xdg.mime.enable = true;
       xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       environment.systemPackages = [
       	#pkgs.qtile-unwrapped
         pkgs.waybar
+	pkgs.perl540Packages.FileMimeInfo
+	pkgs.glew
+	pkgs.pipx
+	pkgs.dbus
+	pkgs.glfw
+	pkgs.bluez
 	pkgs.swaylock
 	pkgs.hyprlock
 	pkgs.bluetui

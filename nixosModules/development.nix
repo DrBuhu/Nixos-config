@@ -1,7 +1,8 @@
-{lib,  pkgs,  config, ... }:
+{inputs, lib,  pkgs,  config, ... }:
 
 let
   cfg = config.my.desktop;
+  system = "x86_64-linux";
   inherit (lib.lists) optionals;
 
 in
@@ -19,14 +20,24 @@ in
   [
     ../softwareconf/doom-emacs.nix
   ];
+
+
   config={
+  users.users.unwary = {
+    extraGroups = [ "libvirtd" ];
+
+  };
     environment.systemPackages = [
 
+
       pkgs.ostree
+      pkgs.ninja
       #Docker
       pkgs.lazydocker
       pkgs.arduino
+      pkgs.cmake
       pkgs.jetbrains.idea-ultimate
+      pkgs.jetbrains-toolbox
       pkgs.jetbrains.datagrip
 
       # Languages
@@ -35,7 +46,6 @@ in
       pkgs.nixd
       pkgs.nil
       pkgs.python3
-      pkgs.pipx
       pkgs.uv
       pkgs.gcc
       pkgs.clang
@@ -46,7 +56,6 @@ in
       pkgs.nil
       pkgs.alejandra #Nix-Formatting
       pkgs.zed-editor
-      pkgs.jetbrains-toolbox
   ] ++ optionals cfg.enable [
 
       pkgs.vscodium-fhs
@@ -68,7 +77,6 @@ in
   ];
 
 
-  nix.nixPath = ["nixpkgs = $(inputs.nixpkgs)"];
     home-manager.users.${config.my.username}={
       programs={
         java.enable = true;
@@ -90,6 +98,13 @@ in
         #};
   };
   virtualisation.docker.enable = true;
+  virtualisation.libvirtd.qemu = {
+    swtpm.enable = true;
+    ovmf.packages = [ pkgs.OVMFFull.fd ];
+  }  ;
+
+  # Enable USB redirection (optional)
+  virtualisation.spiceUSBRedirection.enable = true;
 
   };
 }
